@@ -53,16 +53,37 @@ body {
 	margin-bottom: 90px;
 }
 
+.button {
+	font-size: 40px;
+}
+
 .Hotel-Image {
 	width: 30vw;
 	height: 60vh;
+	margin-top: 10px;
+}
+
+.Room-Image {
+	width: 50vw;
+	height: 10vh;
+}
+
+.Pool-Image {
+	width: 50vw;
+	height: 10vh;
 }
 
 .start-date {
 	border: none;
+	font-size: 30px;
 }
 
 .end-date {
 	border: none;
 	margin-left: 4px;
+	font-size: 30px;
+}
+
+.datepicker {
+	font-size: 30px;
 }

@@ -16,7 +16,7 @@ const HotelScreen = ({ match }) => {
 
 	return (
 		<>
-			<Link className="btn btn-light my-3" to="/">
+			<Link className="button" to="/">
 				Go Back
 			</Link>
 			<Row>
@@ -49,8 +49,9 @@ const HotelScreen = ({ match }) => {
 											Start Date
 											<br />
 											<DatePicker
+												className="datepicker"
 												selected={startDate}
-												onChage={(date) => setStartDate(date)}
+												onChange={(date) => setStartDate(date)}
 												selectsStart
 												startDate={startDate}
 												endDate={endDate}
@@ -60,8 +61,9 @@ const HotelScreen = ({ match }) => {
 											End date
 											<br />
 											<DatePicker
+												className="datepicker"
 												selected={endDate}
-												onChage={(date) => setEndDate(date)}
+												onChange={(date) => setEndDate(date)}
 												selectsEnd
 												startDate={startDate}
 												endDate={endDate}
@@ -84,7 +86,7 @@ const HotelScreen = ({ match }) => {
 				</Col>
 				<Col md={1}>
 					<Zoom>
-						<Image className="Room-Image" src={hotel.image3} alt={hotel.name} fluid />
+						<Image className="Pool-Image" src={hotel.image3} alt={hotel.name} fluid />
 					</Zoom>
 				</Col>
 			</Row>
