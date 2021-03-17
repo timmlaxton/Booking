@@ -2,22 +2,24 @@ const hotels = [
 	{
 		_id: '1',
 		name: 'Bates Motel',
-		// image: '/images/Boulevard.jpg',
-		imageroom: '/images/BoulevarRoom.jpg',
-		imagepool: '/images/BoulevardPool.jpg',
+		image: '/images/Boulevard.jpg',
+		image2: '/images/Boulevards.jpg',
+		image3: '/images/BoulevardPool.jpg',
 		description: 'Motel thats been in the family for years, previosly ran by mother but she can no longet work',
 		type: 'Hotel',
 		category: 'Luxuory',
-		price: 89.99,
+		single: 89.99,
+		double: 120.99,
+		king: 160.0,
 		from: 10,
 		to: 12,
-		rating: 4.5,
-		numReviews: 12
+		rating: 3.8,
+		numReviews: 19
 	},
 	{
 		_id: '2',
 		name: 'Criterion Motel',
-		// image: '/images/Criterion.jpg',
+		image: '/images/Criterion.jpg',
 		imageroom: '/images/CriterionRoom.jpg',
 		imagepool: '/images/CriterionPool.jpg',
 		description: 'Come take a realxing break at the Criterion, situated beside a busy motowary for fast getaway',
@@ -26,13 +28,13 @@ const hotels = [
 		price: 89.99,
 		from: 10,
 		to: 12,
-		rating: 4.5,
-		numReviews: 12
+		rating: 3.5,
+		numReviews: 6
 	},
 	{
 		_id: '3',
 		name: 'Portland Hotel',
-		// image: '/images/Portland.jpg',
+		image: '/images/Portland.jpg',
 		imageroom: '/images/PortlandRoom.jpg',
 		imagepool: '/images/PortlandPool.jpg',
 		description:
@@ -42,13 +44,13 @@ const hotels = [
 		price: 89.99,
 		from: 10,
 		to: 12,
-		rating: 4.5,
-		numReviews: 12
+		rating: 3.5,
+		numReviews: 10
 	},
 	{
 		_id: '4',
 		name: 'Grand Budapest Hotel',
-		// image: '/images/Portland.jpg',
+		image: '/images/Grand.jpg',
 		imageroom: '/images/PortlandRoom.jpg',
 		imagepool: '/images/PortlandPool.jpg',
 		description:
@@ -58,8 +60,8 @@ const hotels = [
 		price: 89.99,
 		from: 10,
 		to: 12,
-		rating: 4.5,
-		numReviews: 12
+		rating: 4.2,
+		numReviews: 6
 	}
 ];
 

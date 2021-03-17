@@ -1,5 +1,9 @@
-main {
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+body {
 	min-height: 80vh;
+
+	font-family: 'Amatic SC', cursive;
 }
 
 .jumbotron {
@@ -10,6 +14,14 @@ main {
 	margin-left: 0%;
 	margin-right: -15%;
 	width: 50%;
+}
+
+.nav-brand {
+	font-size: 50px;
+}
+
+.header-links {
+	font-size: 20px;
 }
 
 .image {
@@ -24,10 +36,24 @@ main {
 }
 
 .card-body {
-	width: 500%;
+	width: 100vh;
 }
 
 .card-title {
 	margin-right: 85%;
 	font-size: small;
+}
+
+.card-image {
+	width: 10vw;
+	height: 20vh;
+}
+
+.card-rating {
+	margin-bottom: 90px;
+}
+
+.Hotel-Image {
+	width: 30vw;
+	height: 60vh;
 }
