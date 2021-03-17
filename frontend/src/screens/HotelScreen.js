@@ -1,12 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import Rating from '../components/Rating';
 import hotels from '../hotels';
 
 const HotelScreen = ({ match }) => {
+	const [startDate, setStartDate] = useState(new Date());
+	const [endDate, setEndDate] = useState(new Date());
+
 	const hotel = hotels.find((p) => p._id === match.params.id);
 
 	return (
@@ -39,7 +44,31 @@ const HotelScreen = ({ match }) => {
 						<ListGroup variant="flush">
 							<ListGroup.Item>
 								<Row>
-									<Col>{hotel.description}</Col>
+									<Col>
+										<ListGroup.Item className="start-date">
+											Start Date
+											<br />
+											<DatePicker
+												selected={startDate}
+												onChage={(date) => setStartDate(date)}
+												selectsStart
+												startDate={startDate}
+												endDate={endDate}
+											/>
+										</ListGroup.Item>
+										<ListGroup.Item className="end-date">
+											End date
+											<br />
+											<DatePicker
+												selected={endDate}
+												onChage={(date) => setEndDate(date)}
+												selectsEnd
+												startDate={startDate}
+												endDate={endDate}
+												mindDate={startDate}
+											/>
+										</ListGroup.Item>
+									</Col>
 								</Row>
 							</ListGroup.Item>
 						</ListGroup>
@@ -55,7 +84,7 @@ const HotelScreen = ({ match }) => {
 				</Col>
 				<Col md={1}>
 					<Zoom>
-						<Image className="Room-Image" src={hotel.image2} alt={hotel.name} fluid />
+						<Image className="Room-Image" src={hotel.image3} alt={hotel.name} fluid />
 					</Zoom>
 				</Col>
 			</Row>
