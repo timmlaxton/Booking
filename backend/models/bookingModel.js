@@ -1,12 +1,11 @@
-import { MongoServerSelectionError } from 'mongodb';
-import Mogoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const bookingSchema = mongoose.Schema(
 	{
 		user: {
 			type: mongoose.Schema.Types.ObjectId,
 			required: true,
-			ref: User
+			ref: 'User'
 		},
 		bookingItems: [
 			{
@@ -14,7 +13,7 @@ const bookingSchema = mongoose.Schema(
 				image: { type: String, required: true },
 				price: { type: Number, requied: true },
 				hotel: {
-					type: MongoServerSelectionError.Schema.Types.ObjectId,
+					type: mongoose.Schema.Types.ObjectId,
 					required: true,
 					ref: 'Hotel'
 				}
@@ -26,7 +25,7 @@ const bookingSchema = mongoose.Schema(
 			address: { type: String, required: true },
 			city: { type: String, required: true },
 			postCode: { type: String, required: true },
-			country: { typr: String, required: true }
+			country: { type: String, required: true }
 		},
 		paymentMethod: {
 			type: String,
