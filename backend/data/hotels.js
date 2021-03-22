@@ -1,6 +1,5 @@
 const hotels = [
 	{
-		_id: '1',
 		name: 'Bates Motel',
 		image: '/images/Boulevard.jpg',
 		image2: '/images/Boulevards.jpg',
@@ -15,7 +14,6 @@ const hotels = [
 		numReviews: 19
 	},
 	{
-		_id: '2',
 		name: 'Criterion Motel',
 		image: '/images/Criterion.jpg',
 		image2: '/images/CriterionRoom.jpg',
@@ -31,7 +29,6 @@ const hotels = [
 		numReviews: 6
 	},
 	{
-		_id: '3',
 		name: 'Portland Hotel',
 		image: '/images/Portland.jpg',
 		image2: '/images/PortlandRoom.jpg',
@@ -48,7 +45,6 @@ const hotels = [
 		numReviews: 10
 	},
 	{
-		_id: '4',
 		name: 'Grand Budapest Hotel',
 		image: '/images/Grand.jpg',
 		image2: '/images/PortlandRoom.jpg',
