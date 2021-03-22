@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import DatePicker from 'react-datepicker';
@@ -22,7 +22,7 @@ const HotelScreen = ({ match }) => {
 		};
 
 		fetchHotel();
-	}, []);
+	}, [match]);
 
 	return (
 		<>

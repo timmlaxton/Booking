@@ -1,5 +1,11 @@
-const express = require('express');
-const hotels = require('./data/hotels');
+import express from 'express';
+import dotenv from 'dotenv';
+import connectDB from './config/db.js';
+import hotels from './data/hotels.js';
+
+dotenv.config();
+
+connectDB();
 
 const app = express();
 
@@ -16,4 +22,6 @@ app.get('/api/hotels/:id', (req, res) => {
 	res.json(hotel);
 });
 
-app.listen(5000, console.log('Server Running on port 5000'));
+const PORT = process.env.PORT || 5000;
+
+app.listen(PORT, console.log(`Server Running in ${process.env.NODE_ENV} mode on port ${PORT}`));

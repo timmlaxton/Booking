@@ -74,4 +74,4 @@ const hotels = [
 	}
 ];
 
-module.exports = hotels;
+export default hotels;
