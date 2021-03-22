@@ -1,21 +1,19 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Hotel from '../components/Hotel';
+import { listHotels } from '../actions/hotelActions';
 
 const HomeScreen = () => {
-	const [hotels, setHotels] = useState([]);
+	const dispatch = useDispatch();
+
+	const hotelList = useSelector((state) => state.hotelList);
+	const { loading, error, hotels } = hotelList;
 
 	useEffect(() => {
-		const fetchHotels = async () => {
-			const { data } = await axios.get('/api/hotels');
-
-			setHotels(data);
-		};
-
-		fetchHotels();
-	}, []);
+		dispatch(listHotels());
+	}, [dispatch]);
 
 	return (
 		<>
@@ -26,6 +24,19 @@ const HomeScreen = () => {
 			<div className="container-3">
 				<h4 className="homepage-language-title">Who we are:</h4>
 				<h4>Well howdy partner</h4>
+				{loading ? (
+					<h2>Loading...</h2>
+				) : error ? (
+					<h3>{error}</h3>
+				) : (
+					<Row>
+						{hotels.map((hotel) => (
+							<Col key={hotel._id} sm={12} md={6} lg={4} xl={3}>
+								<Hotel hotel={hotel} />
+							</Col>
+						))}
+					</Row>
+				)}
 				{/* <i className="fab fa-js fa-7x"></i> {''}
 				<i className="fab fa-react fa-7x"></i> {''}
 				<i className="fab fa-node fa-7x"></i> {''}
@@ -34,13 +45,6 @@ const HomeScreen = () => {
 			</div>
 			<br />
 			<h1>Hotels</h1>
-			<Row>
-				{hotels.map((hotel) => (
-					<Col key={hotel._id} sm={12} md={6} lg={4} xl={3}>
-						<Hotel hotel={hotel} />
-					</Col>
-				))}
-			</Row>
 		</>
 	);
 };
