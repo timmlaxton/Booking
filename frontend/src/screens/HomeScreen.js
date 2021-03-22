@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Row, Col } from 'react-bootstrap';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import hotels from '../hotels';
 import Hotel from '../components/Hotel';
 
 const HomeScreen = () => {
+	const [hotels, setHotels] = useState([]);
+
+	useEffect(() => {
+		const fetchHotels = async () => {
+			const { data } = await axios.get('/api/hotels');
+
+			setHotels(data);
+		};
+
+		fetchHotels();
+	}, []);
+
 	return (
 		<>
 			<Jumbotron className="jumbotron">

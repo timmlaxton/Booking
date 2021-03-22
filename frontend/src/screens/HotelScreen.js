@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import Zoom from 'react-medium-image-zoom';
@@ -6,13 +7,22 @@ import 'react-medium-image-zoom/dist/styles.css';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import Rating from '../components/Rating';
-import hotels from '../hotels';
 
 const HotelScreen = ({ match }) => {
 	const [startDate, setStartDate] = useState(new Date());
 	const [endDate, setEndDate] = useState(new Date());
 
-	const hotel = hotels.find((p) => p._id === match.params.id);
+	const [hotel, setHotel] = useState({});
+
+	useEffect(() => {
+		const fetchHotel = async () => {
+			const { data } = await axios.get(`/api/hotels/${match.params.id}`);
+
+			setHotel(data);
+		};
+
+		fetchHotel();
+	}, []);
 
 	return (
 		<>
