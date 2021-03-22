@@ -27,7 +27,8 @@ router.get(
 		if (hotel) {
 			res.json(hotel);
 		} else {
-			res.status(404).json({ message: 'Hotel not found ' });
+			res.status(404);
+			throw new Error('Hotel not found');
 		}
 	})
 );
