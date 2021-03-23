@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Hotel from '../components/Hotel';
+import Message from '../components/Message';
+import Loader from '../components/Loader';
 import { listHotels } from '../actions/hotelActions';
 
 const HomeScreen = () => {
@@ -25,9 +27,9 @@ const HomeScreen = () => {
 				<h4 className="homepage-language-title">Who we are:</h4>
 				<h4>Well howdy partner</h4>
 				{loading ? (
-					<h2>Loading...</h2>
+					<Loader />
 				) : error ? (
-					<h3>{error}</h3>
+					<Message variant="danger">{error}</Message>
 				) : (
 					<Row>
 						{hotels.map((hotel) => (
