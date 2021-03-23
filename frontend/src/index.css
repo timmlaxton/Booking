@@ -87,3 +87,9 @@ body {
 .datepicker {
 	font-size: 30px;
 }
+
+.reservation-button {
+	border: none;
+	border-radius: none;
+	color: white;
+}

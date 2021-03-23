@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Col, Image, ListGroup, Card } from 'react-bootstrap';
+import { Row, Col, Image, ListGroup, Card, Button } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
@@ -11,7 +11,7 @@ import { listHotelDetails } from '../actions/hotelActions';
 import Loader from '../components/Loader';
 import Message from '../components/Message';
 
-const HotelScreen = ({ match }) => {
+const HotelScreen = ({ match, history }) => {
 	const [startDate, setStartDate] = useState(new Date());
 	const [endDate, setEndDate] = useState(new Date());
 
@@ -23,6 +23,10 @@ const HotelScreen = ({ match }) => {
 	useEffect(() => {
 		dispatch(listHotelDetails(match.params.id));
 	}, [dispatch, match]);
+
+	const addToCartHandler = () => {
+		history.push(`/cart/${match.params.id}?starDate=${startDate}?endDate=${endDate}`);
+	};
 
 	return (
 		<>
@@ -85,6 +89,11 @@ const HotelScreen = ({ match }) => {
 														endDate={endDate}
 														mindDate={startDate}
 													/>
+												</ListGroup.Item>
+												<ListGroup.Item className="reservation-button">
+													<Button onClick={addToCartHandler} className="btn-block" type="button">
+														Make a Reservation
+													</Button>
 												</ListGroup.Item>
 											</Col>
 										</Row>

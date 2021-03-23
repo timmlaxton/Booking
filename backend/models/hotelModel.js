@@ -51,10 +51,10 @@ const hotelSchema = mongoose.Schema(
 			required: true,
 			default: 0
 		},
-		from: {
+		startDate: {
 			type: Date
 		},
-		to: {
+		endDate: {
 			type: Date
 		},
 		bed: {
