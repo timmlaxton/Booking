@@ -8,8 +8,8 @@ const hotels = [
 		location: 'Arran',
 		category: 'House',
 		price: 66.99,
-		from: 10,
-		to: 12,
+		startDate: 10,
+		endDate: 12,
 		rating: 3.8,
 		numReviews: 19
 	},
@@ -22,8 +22,8 @@ const hotels = [
 		location: 'Arran',
 		category: 'Hotel',
 		price: 89.99,
-		from: 10,
-		to: 12,
+		startDate: 10,
+		endDate: 12,
 		bed: 1,
 		rating: 3.5,
 		numReviews: 6
@@ -38,8 +38,8 @@ const hotels = [
 		location: 'Arran',
 		category: 'Hotel',
 		price: 89.99,
-		from: 10,
-		to: 12,
+		startDate: 10,
+		endDate: 12,
 		bed: 2,
 		rating: 3.5,
 		numReviews: 10
@@ -55,8 +55,8 @@ const hotels = [
 		category: 'Hotel',
 		price: 89.99,
 		bed: 1,
-		from: 10,
-		to: 12,
+		startDate: 10,
+		endDate: 12,
 		rating: 4.2,
 		numReviews: 6
 	}

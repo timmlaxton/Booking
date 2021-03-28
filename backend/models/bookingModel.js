@@ -12,6 +12,7 @@ const bookingSchema = mongoose.Schema(
 				name: { type: String, required: true },
 				image: { type: String, required: true },
 				price: { type: Number, requied: true },
+				qty: { type: Number, required: true },
 				hotel: {
 					type: mongoose.Schema.Types.ObjectId,
 					required: true,
@@ -57,7 +58,7 @@ const bookingSchema = mongoose.Schema(
 		}
 	},
 	{
-		tieStamps: true
+		timeStamps: true
 	}
 );
 

@@ -1,21 +1,21 @@
-import { CART_ADD_RESERVATION, CART_REMOVE_RESERVATION } from '../constants/cartConstants';
+import { CART_ADD_RESERVATION } from '../constants/cartConstants';
 
-export const cartReducer = (state = { cartReservations: [] }, action) => {
+export const cartReducer = (state = { cartItems: [] }, action) => {
 	switch (action.type) {
 		case CART_ADD_RESERVATION:
-			const reservation = action.payload;
+			const item = action.payload;
 
-			const existReservation = state.cartReservations.find((x) => x.hotel === reservation.hotel);
+			const existItem = state.cartItems.find((x) => x.hotel === item.hotel);
 
-			if (existReservation) {
+			if (existItem) {
 				return {
 					...state,
-					cartReservations: state.cartReservations.map((x) => (x.hotel === existReservation.hotel ? reservation : x))
+					cartItems: state.cartItems.map((x) => (x.hotel === existItem.hotel ? item : x))
 				};
 			} else {
 				return {
 					...state,
-					cartReservations: [...state.cartReservations, reservation]
+					cartItems: [...state.cartItems, item]
 				};
 			}
 		default:
