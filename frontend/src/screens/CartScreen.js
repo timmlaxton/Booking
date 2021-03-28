@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap';
 import Message from '../components/Message';
-import { addToCart } from '../actions/cartActions';
+import { addToCart, removeFromCart } from '../actions/cartActions';
 
 const CartScreen = ({ match, location, history }) => {
 	const hotelId = match.params.id;
@@ -17,19 +17,19 @@ const CartScreen = ({ match, location, history }) => {
 	const cart = useSelector((state) => state.cart);
 	const { cartItems } = cart;
 
-	console.log(cartItems);
-
 	useEffect(() => {
 		if (hotelId) {
 			dispatch(addToCart(hotelId, startDate, endDate));
 		}
 	}, [dispatch, hotelId, startDate, endDate]);
 
-	const removeFromCartHandeler = (id) => {};
-	console.log();
+	const removeFromCartHandeler = (id) => {
+		dispatch(removeFromCart(id));
+	};
 
 	const checkoutHandler = () => {};
-	history.push('/login?redirect=shipping');
+	// history.push('/login?redirect=shipping');
+
 	return (
 		<Row>
 			<Col md={8}>
