@@ -129,3 +129,11 @@ body {
 	margin-top: 10px;
 	width: 600px;
 }
+
+.login-name {
+	font-size: 20px;
+}
+
+.dropdown-menu {
+	color: white;
+}
