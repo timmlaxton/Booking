@@ -69,7 +69,6 @@ const LoginScreen = ({ location, history }) => {
 				</Col>
 				<Col className="Hotel-Image">
 					<Image
-						className="Hotel-Image"
 						src="https://images.unsplash.com/photo-1515258124536-ca51b09d5b1d?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8aGlnaGxhbmQlMjBjb3d8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
 						alt=""
 						fluid
