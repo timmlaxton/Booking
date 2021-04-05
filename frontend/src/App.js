@@ -3,20 +3,22 @@ import { BrowserRouter as Router, Route } from 'react-browser-router';
 import { Container } from 'react-bootstrap';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Homescreen from './screens/HomeScreen';
-import Hotelscreen from './screens/HotelScreen';
-import Hotelsscreen from './screens/HotelsScreen';
-import Cartscreen from './screens/CartScreen';
+import LoginScreen from './screens/LoginScreen';
+import HomeScreen from './screens/HomeScreen';
+import HotelScreen from './screens/HotelScreen';
+import HotelsScreen from './screens/HotelsScreen';
+import CartScreen from './screens/CartScreen';
 
 const App = () => {
 	return (
 		<Router>
 			<Header />
 			<Container>
-				<Route path="/" component={Homescreen} exact />
-				<Route path="/hotels" component={Hotelsscreen} exact />
-				<Route path="/hotel/:id" component={Hotelscreen} exact />
-				<Route path="/cart/:id?" component={Cartscreen} exact />
+				<Route path="/" component={HomeScreen} exact />
+				<Route path="/login" component={LoginScreen} exact />
+				<Route path="/hotels" component={HotelsScreen} exact />
+				<Route path="/hotel/:id" component={HotelScreen} exact />
+				<Route path="/cart/:id?" component={CartScreen} exact />
 			</Container>
 			<Footer />
 		</Router>
