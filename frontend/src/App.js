@@ -9,6 +9,7 @@ import RegisterScreen from './screens/RegisterScreen';
 import HomeScreen from './screens/HomeScreen';
 import HotelScreen from './screens/HotelScreen';
 import HotelsScreen from './screens/HotelsScreen';
+import DeliveryScreen from './screens/DeliveryScreen';
 import CartScreen from './screens/CartScreen';
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
 				<Route path="/profile" component={ProfileScreen} exact />
 				<Route path="/hotels" component={HotelsScreen} exact />
 				<Route path="/hotel/:id" component={HotelScreen} exact />
+				<Route path="/shipping" component={DeliveryScreen} exact />
 				<Route path="/cart/:id?" component={CartScreen} exact />
 			</Container>
 			<Footer />
