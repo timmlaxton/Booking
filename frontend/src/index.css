@@ -6,6 +6,10 @@ body {
 	font-family: 'Amatic SC', cursive;
 }
 
+.navbar {
+	border-bottom: 2px solid #e8e8e8;
+}
+
 .jumbotron {
 	width: 100%;
 	height: 0%;
