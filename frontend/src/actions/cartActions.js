@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { CART_ADD_RESERVATION, CART_REMOVE_RESERVATION } from '../constants/cartConstants';
+import { CART_ADD_RESERVATION, CART_REMOVE_RESERVATION, CART_SAVE_DELIVERY_ADDRESS } from '../constants/cartConstants';
 
 export const addToCart = (id, qty, startDate, endDate) => async (dispatch, getState) => {
 	const { data } = await axios.get(`/api/hotels/${id}`);
@@ -27,4 +27,13 @@ export const removeFromCart = (id) => (dispatch, getState) => {
 	});
 
 	localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+};
+
+export const saveDeliveryAddress = (data) => (dispatch) => {
+	dispatch({
+		type: CART_SAVE_DELIVERY_ADDRESS,
+		payload: data
+	});
+
+	localStorage.setItem('deliveryAddress', JSON.stringify(data));
 };
