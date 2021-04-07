@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Form, Button, Row, Col } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
+import CheckoutSteps from '../components/CheckoutSteps';
 import { saveDeliveryAddress } from '../actions/cartActions';
 
 const DeliveryScreen = ({ history }) => {
@@ -25,6 +26,7 @@ const DeliveryScreen = ({ history }) => {
 
 	return (
 		<>
+			<CheckoutSteps step step2 />
 			<Row>
 				<Col md={6}>
 					<h1>Delivery Details</h1>

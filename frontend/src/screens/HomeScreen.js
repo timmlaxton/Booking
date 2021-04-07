@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Row, Col } from 'react-bootstrap';
 import Jumbotron from 'react-bootstrap/Jumbotron';
+
 import Hotel from '../components/Hotel';
 import Message from '../components/Message';
 import Loader from '../components/Loader';
